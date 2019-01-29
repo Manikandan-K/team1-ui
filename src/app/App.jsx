@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route,Switch } from 'react-router';
+import { Route, Switch } from 'react-router';
 import { ConnectedRouter } from 'react-router-redux';
 import { Provider } from 'react-redux';
 import configureStore from './store';
@@ -7,6 +7,7 @@ import createHistory from 'history/createBrowserHistory'
 import Header from './components/header/Header'
 import Home from './Home'
 import Test from './test'
+import Footer from './components/footer/Footer'
 
 const browserHistory = createHistory()
 
@@ -25,7 +26,8 @@ const Main = () => (
   <div>
     <Header />
     <Routes />
-  </div>  
+    <Footer />
+  </div>
 );
 
 const App = () => (

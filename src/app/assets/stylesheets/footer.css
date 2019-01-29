@@ -1,0 +1,14 @@
+.footer-wrapper{
+  height: 4em;
+  border: 1px solid #eeeeee;
+  text-align: center;
+}
+a{
+  display: inline-block;
+  margin: 15px;
+
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 1.4rem;
+  font-weight: 500;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+}
