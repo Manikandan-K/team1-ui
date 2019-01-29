@@ -4,7 +4,7 @@ import MovieGrid from '../movies/MovieGrid';
 const Home = () => (
   <div>
     <MovieGrid />
-  </div>  
+  </div>
 );
 
 Home.defaultProps = {};
