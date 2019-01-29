@@ -6,6 +6,7 @@ import configureStore from './store';
 import createHistory from 'history/createBrowserHistory'
 import Header from './components/header/Header'
 import Home from './Home'
+import Test from './test'
 
 const browserHistory = createHistory()
 
@@ -13,7 +14,10 @@ const store = configureStore(browserHistory);
 
 const Routes = () => (
   <ConnectedRouter history={browserHistory}>
-    <Route component={Home} path="/" />
+    <switch>
+      <Route exact component={Home} path="/" />
+      <Route exact component={Test} path="/login/" />
+    </switch>
   </ConnectedRouter>
 );
 
@@ -21,7 +25,7 @@ const Main = () => (
   <div>
     <Header />
     <Routes />
-  </div>  
+  </div>
 );
 
 const App = () => (
