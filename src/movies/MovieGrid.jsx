@@ -23,10 +23,10 @@ class MovieGrid extends Component {
   showMovies() {
     return (
       <Grid container spacing={24}>
-        {this.props.movies.items.map(({ name, slug }) => (
-          <Grid item xs={2}>
+        {this.props.movies.items.map((movie) => (
+          <Grid item xs={2} key={movie.name}>
             <Paper>
-              <MovieItem key={name} name={name} slug={slug} />
+              <MovieItem movie={movie}/>
             </Paper>
           </Grid>
         ))}
