@@ -21,6 +21,7 @@ const Main = () => (
   <div>
     <Header />
     <Routes />
+ 
   </div>  
 );
 
