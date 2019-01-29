@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import MovieItem from './MovieItem';
 import { connect } from 'react-redux';
 import fetchMovies from './actions';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
 
 class MovieGrid extends Component {
 
@@ -11,7 +13,7 @@ class MovieGrid extends Component {
   }
 
   render() {
-    if(this.props.movies.fetching) {
+    if (this.props.movies.fetching) {
       return this.showProgress()
     }
 
@@ -20,11 +22,15 @@ class MovieGrid extends Component {
 
   showMovies() {
     return (
-      <div>
+      <Grid container spacing={24}>
         {this.props.movies.items.map(({ name, slug }) => (
-          <MovieItem key={name} name={name} slug={slug} />
+          <Grid item xs={2}>
+            <Paper>
+              <MovieItem key={name} name={name} slug={slug} />
+            </Paper>
+          </Grid>
         ))}
-      </div>
+      </Grid>
     );
   }
 
@@ -56,7 +62,7 @@ MovieGrid.propTypes = {
 export default connect(
   (state) => ({
     movies: state.movies
-  }), 
+  }),
   (dispatch) => ({
     fetchMovies: () => dispatch(fetchMovies())
   }))(MovieGrid);
