@@ -35,5 +35,8 @@
   "devDependencies": {
     "enzyme": "^3.8.0",
     "jest": "^24.0.0"
+  },
+  "engines":{
+    "node":"11.6.0"
   }
 }
