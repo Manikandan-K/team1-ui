@@ -1,5 +1,9 @@
 import React from 'react';
 import '../../assets/stylesheets/footer.css'
+import {
+  FacebookIcon,
+  TwitterIcon
+} from 'react-share';
 
 const Footer = () => {
   return (

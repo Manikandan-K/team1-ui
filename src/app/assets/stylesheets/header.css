@@ -12,8 +12,18 @@
   font-size: 1.4em;
 }
 
-.title-wrapper{
-  /* display: flex; */
-  /* width:50%; */
+.social-icon {
+  border-radius: 40px;
 }
+
+.action-wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.action-item{
+  padding: 8px;  
+}
+
 
