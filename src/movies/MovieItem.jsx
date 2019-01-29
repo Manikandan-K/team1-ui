@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './MovieItem.css';
 
-
 const MovieItem = ({ movie }) => {
   const imageUrl = `https://img.spicinemas.in/resources/images/movies/${movie.slug}/150x207.jpg`;
   return (
@@ -14,12 +13,10 @@ const MovieItem = ({ movie }) => {
   )
 }
 
-
 MovieItem.defaultProps = {};
 
 MovieItem.propTypes = {
-  name: PropTypes.string.isRequired,
-  slug: PropTypes.string.isRequired,
+  name: PropTypes.object
 };
 
 export default MovieItem;
