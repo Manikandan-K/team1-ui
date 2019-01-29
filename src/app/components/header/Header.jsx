@@ -1,8 +1,12 @@
 import React from 'react';
+import TitleWrapper from './TitleWrapper'
+import ActionWrapper from './ActionWrapper'
+import '../../App.css'
 
 const Header = () => (
-  <div >
-    <h1>Just Cinemas</h1>
+  <div className="page-header">
+    <TitleWrapper/>
+    <ActionWrapper/>
   </div >
 );
 
