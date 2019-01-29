@@ -8,3 +8,7 @@
 .movies-container .movie-wrapper {
     width: 16.5%;
 }
+
+.active-tab{
+    background-color:red;
+}
