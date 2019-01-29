@@ -9,6 +9,30 @@
     width: 16.5%;
 }
 
-.active-tab{
-    background-color:red;
+.tab-btn{
+    border:1px solid #eee;
+    padding:15px 30px;
+    position: relative;
+    margin-left: -1px;
+    font-weight: 500;
+}
+.tab-btn:first-child {
+    margin-left: 0;
+}
+.tab-btn:hover {
+    background: #f1f4ff;
+}
+.tab-btn.active-tab{
+    background: #F67E4B;
+    color: white;
+    font-weight: 500;
+}
+.tab-btn:active, .tab-btn:focus, .tab-btn:hover {
+    outline: 0;
+
+}
+.tabs-wrapper{
+    padding: 20px 35px;
+    max-width: 1500px;
+    margin:auto;
 }

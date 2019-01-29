@@ -1,8 +1,6 @@
 .movie {
     text-align: center;
-    cursor: pointer;
-    
-    
+    cursor: pointer;   
 }
 .movie:hover {
     background: #f1f5ff;

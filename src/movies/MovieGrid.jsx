@@ -35,7 +35,7 @@ class MovieGrid extends Component {
   showMovies() {
     return (
       <div >
-        <div>
+        <div className="tabs-wrapper">
           <button className={this.applyClass(0)} onClick={() => this.onTabClick(0)}>NOW RUNNING</button>
           <button className={this.applyClass(1)} onClick={() => this.onTabClick(1)}>COMING SOON</button>
         </div>
