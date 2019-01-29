@@ -1,4 +1,22 @@
 .movie {
     text-align: center;
-    padding: 10px 0;
+    cursor: pointer;
+    
+    
+}
+.movie:hover {
+    background: #f1f5ff;
+    transform: scale(1.01);
+    transform-origin: center;
+}
+.movie-wrapper {
+    padding: 15px 15px;
+    box-sizing: border-box;
+}
+.movie-image {
+    height: auto;
+    width: 100%;
+}
+.movie-details {
+    padding: 10px;
 }
