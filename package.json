@@ -22,7 +22,7 @@
     "redux-logger": "^3.0.6",
     "redux-mock-store": "^1.5.1",
     "redux-thunk": "^2.2.0",
-    "slug": "^0.9.1"
+    "slug": "^0.9.3"
   },
   "scripts": {
     "start": "./node_modules/react-scripts/bin/react-scripts.js start",
@@ -30,5 +30,9 @@
     "test": "./node_modules/react-scripts/bin/react-scripts.js test --env=jsdom",
     "eject": "./node_modules/react-scripts/bin/react-scripts.js eject",
     "test_with_coverage": "CI=true ./node_modules/react-scripts/bin/react-scripts.js test --env=jsdom --coverage"
+  },
+  "devDependencies": {
+    "enzyme": "^3.8.0",
+    "jest": "^24.0.0"
   }
 }

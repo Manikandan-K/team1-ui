@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router';
+import { Route,Switch } from 'react-router';
 import { ConnectedRouter } from 'react-router-redux';
 import { Provider } from 'react-redux';
 import configureStore from './store';
@@ -14,10 +14,10 @@ const store = configureStore(browserHistory);
 
 const Routes = () => (
   <ConnectedRouter history={browserHistory}>
-    <switch>
+    <Switch>
       <Route exact component={Home} path="/" />
       <Route exact component={Test} path="/login/" />
-    </switch>
+    </Switch>
   </ConnectedRouter>
 );
 
