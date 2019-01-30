@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../assets/stylesheets/header.css'
 
 const ActionWrapper = () => {
   return (
