@@ -1,0 +1,63 @@
+
+.jcinemas-logo{
+    height: 4em;
+  }
+  
+  .jcinemas-login-button{
+    height: 4em;
+    font-size: 2.495em;
+  }
+  
+  .MuiButton-label-2 {
+    font-size: 1.4em;
+  }
+  
+  .social-icon {
+    border-radius: 40px;
+  }
+  
+  .action-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .action-item{
+    padding: 8px;  
+  }
+  button.action-item {
+    font-size: 1.2rem;
+    box-sizing: border-box;
+    padding: 10px 20px;
+    height: auto;
+    background: white;
+    box-shadow: none;
+    border: 1px solid #d1d4da;
+    margin: 0 15px;
+
+
+}
+button.action-item:hover {
+    background-color: #f1f3f6;
+}
+.button-icon--blue {
+    width: 36px;
+    height: 36px;
+    color: white;
+    line-height: 36px;
+    background: #3a5997;
+    text-align: center;
+    border-radius: 50%;
+}
+.button-icon--skyblue {
+    width: 36px;
+    height: 36px;
+    color: white;
+    line-height: 36px;
+    background: #02aced;
+    text-align: center;
+    border-radius: 50%;
+}
+  
+  
+  
