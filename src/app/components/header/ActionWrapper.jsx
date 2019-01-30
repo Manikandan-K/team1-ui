@@ -1,6 +1,5 @@
 import React from 'react';
 import '../../assets/stylesheets/header.css'
-import 'font-awesome/css/font-awesome.css'
 
 const ActionWrapper = () => {
   return (
