@@ -58,6 +58,10 @@ button.action-item:hover {
     text-align: center;
     border-radius: 50%;
 }
+.button-icon--blue:hover, .button-icon--skyblue:hover {
+    color: white;
+    opacity: 0.9;
+}
   
   
   
