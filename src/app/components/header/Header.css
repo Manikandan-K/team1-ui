@@ -1,6 +1,15 @@
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 20px;
+  border-bottom: 1px solid #eeeeee;
+  margin: 0;
+}
 
 .jcinemas-logo{
     height: 4em;
+    display: block;
   }
   
   .jcinemas-login-button{
@@ -28,12 +37,13 @@
   button.action-item {
     font-size: 1.2rem;
     box-sizing: border-box;
-    padding: 10px 20px;
+    padding: 12px 20px;
     height: auto;
     background: white;
     box-shadow: none;
     border: 1px solid #d1d4da;
-    margin: 0 15px;
+    margin: 0 10px;
+    border-radius: 4px;
 
 
 }
@@ -48,6 +58,8 @@ button.action-item:hover {
     background: #3a5997;
     text-align: center;
     border-radius: 50%;
+    margin: 0 10px;
+    font-size: 1.4rem; 
 }
 .button-icon--skyblue {
     width: 36px;
@@ -57,6 +69,8 @@ button.action-item:hover {
     background: #02aced;
     text-align: center;
     border-radius: 50%;
+    margin: 0 10px;
+    font-size: 1.4rem;
 }
 .button-icon--blue:hover, .button-icon--skyblue:hover {
     color: white;

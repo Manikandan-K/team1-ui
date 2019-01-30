@@ -4,6 +4,7 @@
     padding: 20px;
     max-width: 1500px;
     margin: auto;
+    padding-top: 0;
 }
 .movies-container .movie-wrapper {
     width: 16.5%;
@@ -15,24 +16,33 @@
     position: relative;
     margin-left: -1px;
     font-weight: 500;
+    font-size: 1.2rem;
+    cursor: pointer;
+    
 }
 .tab-btn:first-child {
     margin-left: 0;
+    border-radius: 4px 0 0 4px;
+}
+.tab-btn:last-child {
+    border-radius: 0 4px 4px 0;
 }
 .tab-btn:hover {
-    background: #f1f4ff;
+    background: #f1f4f8;
+
 }
 .tab-btn.active-tab{
     background: #F67E4B;
     color: white;
     font-weight: 500;
+    border-color: #F67E4B;
 }
 .tab-btn:active, .tab-btn:focus, .tab-btn:hover {
     outline: 0;
 
 }
 .tabs-wrapper{
-    padding: 20px 35px;
+    padding: 30px 35px 15px;
     max-width: 1500px;
     margin:auto;
 }

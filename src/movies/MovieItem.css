@@ -1,9 +1,11 @@
 .movie {
     text-align: center;
-    cursor: pointer;   
+    cursor: pointer;
+    border: 1px solid #e1e4e8;
+    border-radius: 4px; 
 }
 .movie:hover {
-    background: #f1f5ff;
+    background: #f1f4f8;
     transform: scale(1.01);
     transform-origin: center;
 }
@@ -17,4 +19,7 @@
 }
 .movie-details {
     padding: 10px;
+}
+.movie img {
+    border-radius: 4px 4px 0 0; 
 }

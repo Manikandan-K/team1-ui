@@ -16,7 +16,6 @@ const store = configureStore(browserHistory);
 const Routes = () => (
   <ConnectedRouter history={browserHistory}>
     <Switch>
-      
       <Route component={Test} path="/login/" />
       <Route component={Home} path="/" />
     </Switch>

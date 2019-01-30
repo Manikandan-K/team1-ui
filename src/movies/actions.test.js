@@ -11,6 +11,9 @@ let store;
 const apiData = [{ "id": 1, "name": "Kabali", "experiences": "RDX, Dolby Atmos, SUB", "listingType": "NOW_SHOWING", "slug": "kabali" },
 { "id": 2, "name": "Sultan", "experiences": "RDX, Dolby Atmos, SUB", "listingType": "NOW_SHOWING", "slug": "sultan" }]
 
+const apiDataUpcoming = [{ "id": 3, "name": "Kabali", "experiences": "RDX, Dolby Atmos, SUB", "listingType": "UPCOMING", "slug": "kabali" },
+{ "id": 4, "name": "Sultan", "experiences": "RDX, Dolby Atmos, SUB", "listingType": "UPCOMING", "slug": "sultan" }]
+
 
 describe("movies/actions", () => {
   beforeEach(() => {
@@ -29,6 +32,22 @@ describe("movies/actions", () => {
       expect(store.getActions()[1]).toEqual({
         type: FETCH_MOVIES_SUCCESS,
         payload: apiData
+      });
+    });
+  });
+
+  it('should fetch movies from server which are upcming and return FETCH_MOVIES_SUCCESS', async () => {
+    mock
+      .onGet('http://localhost:9090/movies/upcoming')
+      .reply(200, apiDataUpcoming);
+
+    let expectedActions = []
+    
+    store.dispatch(fetchMovies('upcoming')).then(() => {
+      expect(store.getActions()[0]).toEqual({ type: FETCH_MOVIES_PROGRESS });
+      expect(store.getActions()[1]).toEqual({
+        type: FETCH_MOVIES_SUCCESS,
+        payload: apiDataUpcoming
       });
     });
   });

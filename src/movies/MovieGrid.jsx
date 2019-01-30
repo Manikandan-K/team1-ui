@@ -30,6 +30,19 @@ class MovieGrid extends Component {
 
   onTabClick(tabIndex) {
     this.setState({ selectedTab: tabIndex });
+    this.loadMovies(tabIndex)
+  }
+
+  loadMovies(tabIndex) {
+    console.log("Tab Index Is", tabIndex);
+    return tabIndex === 0 ? this.loadNowShowingMovies() : this.loadUpcomingMovies();
+  }
+  loadNowShowingMovies() {
+    this.props.fetchMovies('now-showing')
+  }
+  loadUpcomingMovies() {
+    console.log("Inside Load Upcoming Movies");
+    this.props.fetchMovies('upcoming')
   }
 
   showMovies() {
@@ -54,7 +67,9 @@ class MovieGrid extends Component {
   }
 
   showUpcomingMovies(){
-    return null;
+    return this.props.movies.items.map((movie) =>
+    <MovieItem key={movie.name} movie={movie} />
+  )
   }
 
   showProgress() {
@@ -87,5 +102,5 @@ export default connect(
     movies: state.movies
   }),
   (dispatch) => ({
-    fetchMovies: () => dispatch(fetchMovies())
+    fetchMovies: (movieType) => dispatch(fetchMovies(movieType))
   }))(MovieGrid);
