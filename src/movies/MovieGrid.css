@@ -32,10 +32,10 @@
 
 }
 .tab-btn.active-tab{
-    background: #F67E4B;
+    background: #3B5B95;
     color: white;
     font-weight: 500;
-    border-color: #F67E4B;
+    border-color: #3B5B95;
 }
 .tab-btn:active, .tab-btn:focus, .tab-btn:hover {
     outline: 0;
@@ -45,4 +45,14 @@
     padding: 30px 35px 15px;
     max-width: 1500px;
     margin:auto;
+}
+.loading-sign {
+    min-height: 30rem;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-around;
+    font-size: 2rem;
+    color: #777;
+
 }
