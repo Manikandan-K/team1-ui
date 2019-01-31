@@ -80,6 +80,7 @@ button.action-item:hover {
 .title-wrapper {
   display: flex; 
   align-items: center;
+  min-width: 220px;
 }
 .title-wrapper h1 {
   font-family: "Roboto Slab", serif;
