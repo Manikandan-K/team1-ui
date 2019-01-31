@@ -33,7 +33,6 @@
     "test_with_coverage": "CI=true ./node_modules/react-scripts/bin/react-scripts.js test --env=jsdom --coverage"
   },
   "devDependencies": {
-    "enzyme": "^3.8.0",
-    "jest": "^24.0.0"
+    "enzyme": "^3.8.0"
   }
 }
