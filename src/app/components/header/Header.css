@@ -80,7 +80,10 @@ button.action-item:hover {
 .title-wrapper {
   display: flex; 
   align-items: center;
+<<<<<<< HEAD
   min-width: 220px;
+=======
+>>>>>>> 9b0f08e1fc3e19a7b0ed61b813fde3975b705f6d
 
 }
 .title-wrapper h1 {
