@@ -24,6 +24,14 @@ const movieDataFetchFailure = {
   type: FETCH_MOVIES_FAILURE,
 };
 
+
+const fetchMovieInProgress = {
+  type: FETCH_MOVIE_PROGRESS
+}
+const movieDetailsFailure = {
+  type: FETCH_MOVIE_FAILURE,
+};
+
 const fetchMovies = (movieType = 'now-showing') => {
   return async (dispatch) => {
     dispatch(fetchMoviesInProgress);
@@ -45,18 +53,18 @@ const fetchMovies = (movieType = 'now-showing') => {
   }
 };
 
-export function fetchMovie(id) {
+export const fetchMovie = (id = 0) => {
   return async (dispatch) => {
-    dispatch(FETCH_MOVIE_PROGRESS);
+    dispatch(fetchMovieInProgress);
     try {
-      const response = await axios.get(`${baseUrl()}/movies/${id}`);
+      const response = await axios.get(`${baseUrl()}/movies/details/${id}`);
       dispatch({
         type: FETCH_MOVIE_SUCCESS,
         payload: response.data
       });
     }
     catch (error) {
-      dispatch(FETCH_MOVIES_FAILURE);
+      dispatch(movieDetailsFailure);
     }
   }
 }

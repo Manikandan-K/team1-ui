@@ -1,0 +1,109 @@
+.details-wrapper {
+    padding: 20px 0;
+}
+.label {
+    border:1px solid #eee;
+    padding:8px 30px;
+    position: relative;
+    margin-left: -1px;
+    font-weight: 500;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: inline-block;
+
+    background: #3B5B95;
+    color: white;
+    font-weight: 500;
+    border-color: #3B5B95;
+    border-radius: 0px;
+    
+}
+.btn-book {
+    border:1px solid #eee;
+    padding:12px 30px;
+    position: relative;
+    margin-left: -1px;
+    font-weight: 400;
+    font-size: 1.4rem;
+    cursor: pointer;
+    display: block;
+    background: #3B5B95;
+    color: white;
+    border-color: #3B5B95;
+    border-radius: 4px;
+    margin: auto;
+    width: 100%;
+}
+.details-cover {
+    background-color: red; 
+    width: 100%;
+    margin-top: 20px;
+    height: 300px;
+    background-size: cover;
+    background-position: center; 
+    overflow: hidden;
+
+}
+.details-cover img {
+    width: 100%;
+}
+.details-content {
+    display: flex;
+}
+.details-synopsis {
+    padding: 20px 0;
+    width: 70%;
+    
+}
+.details-synopsis h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-family: "Roboto Slab", serif;
+    font-weight: 400;
+    color: #3B5B95;
+}
+.details-synopsis p {
+    font-size: 1.4rem;
+    color: #515559;
+    line-height: 1.5;
+    margin: 20px 0;
+    max-width: 80%;
+    
+
+}
+.details-bookbutton {
+    flex: 1;
+    padding: 20px 40px;
+}
+.details-movieinfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.details-movietitle {
+    display: flex;
+    align-items: center;
+}
+.details-movietitle h1 {
+    margin-right: 10px;
+}
+.details-movierating {
+    font-size: 1.5rem;
+    color: #515559;
+    display: block;
+    width: 1.8em;
+    height: 1.8em;
+    line-height: 1.9em;
+    background-color: Green;
+    color: white;
+    text-align: center;
+    border-radius: 50%;
+    margin-right: 10px;
+    vertical-align: middle;
+
+}
+.details-language {
+    font-size: 1.4rem;
+    font-style: italic;
+    color: #515559;
+}
