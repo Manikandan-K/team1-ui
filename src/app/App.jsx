@@ -7,6 +7,7 @@ import createHistory from 'history/createBrowserHistory'
 import Header from './components/header/Header'
 import Home from './Home'
 import Footer from './components/footer/Footer'
+import MovieDetail from '../movies/MovieDetail';
 
 const browserHistory = createHistory()
 
@@ -15,6 +16,7 @@ const store = configureStore(browserHistory);
 const Routes = () => (
   <ConnectedRouter history={browserHistory}>
     <Switch>
+      <Route component={MovieDetail} path="/movies/:id/" />
       <Route component={Home} path="/" />
     </Switch>
   </ConnectedRouter>

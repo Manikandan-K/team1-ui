@@ -66,10 +66,10 @@ class MovieGrid extends Component {
     )
   }
 
-  showUpcomingMovies(){
+  showUpcomingMovies() {
     return this.props.movies.items.map((movie) =>
-    <MovieItem key={movie.name} movie={movie} />
-  )
+      <MovieItem key={movie.name} movie={movie} />
+    )
   }
 
   showProgress() {
