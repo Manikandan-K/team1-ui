@@ -91,4 +91,7 @@ button.action-item:hover {
   margin-right: 10px;
 }
   
-  
+.page-header > a {
+  color: inherit;
+  text-decoration: none;
+}

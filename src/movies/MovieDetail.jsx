@@ -11,17 +11,10 @@ class MovieDetail extends PureComponent{
         super(props);
         
         this.state = {
-            movie: {
-                name: "Kabali",
-                synopsis: "Dummy Description",
-                genre: "crime",
-                crew: "Rajni, Kamal",
-                cast: "Rajni, Anurag",
-                runtime: 150,
-                rating: "U",
-                listingType: "now_showing"
-            }
+            isTrailerPopupActive: false
         }
+        this.openTrailerPopup = this.openTrailerPopup.bind(this);
+        this.closeTrailerPopup = this.closeTrailerPopup.bind(this);
     }
     componentWillMount() {
         this.props.fetchMovie(this.props.match.params.id)
@@ -49,6 +42,12 @@ class MovieDetail extends PureComponent{
     }
     renderPage() {
 
+    }
+    openTrailerPopup() {
+        this.setState({isTrailerPopupActive: true});
+    }
+    closeTrailerPopup() {
+        this.setState({isTrailerPopupActive: false});
     }
     renderMovieDetails(){
         let styles = {
@@ -95,9 +94,32 @@ class MovieDetail extends PureComponent{
                     </p>
                     </div>
                     <div className="details-bookbutton">
-                        <button className="btn-book">
-                        BOOK SEATS
-                        </button>
+
+                        <div>
+                            <button className="btn-book">
+                            BOOK SEATS
+                            </button>
+                        </div>
+                        <div>
+                            <button className="btn-trailer" onClick={this.openTrailerPopup}>
+                            <i className="fa fa-youtube-play"></i>Play Trailer
+                            </button>
+                        </div>
+                        {
+                        this.state.isTrailerPopupActive ? 
+                            (   
+                                <div className="popup-holder">
+                                <div className="trailer-popup">
+                                <button className="popup-close-btn" onClick={this.closeTrailerPopup}>
+                                    <i className="fa fa-times"></i>
+                                </button>
+                                <div className="trailer">
+                                    <iframe width="700" height="394" src={this.props.movie.details.trailer}  frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+                                </div>
+                                </div>
+                            ) : null
+                        }
                     </div>
                 </div>
             </div>
