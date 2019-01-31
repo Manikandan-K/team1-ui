@@ -17,7 +17,10 @@ class MovieDetail extends PureComponent{
         this.closeTrailerPopup = this.closeTrailerPopup.bind(this);
     }
     componentWillMount() {
-        this.props.fetchMovie(this.props.match.params.id)
+        if(this.props.match !== undefined) {
+            this.props.fetchMovie(this.props.match.params.id)
+        }
+        
     }
 
     showProgress() {
@@ -34,7 +37,7 @@ class MovieDetail extends PureComponent{
     render() { 
         return (
 
-            <div class="movieDetailsPage-wrapper">
+            <div className="movieDetailsPage-wrapper">
                 { this.props.movie.fetching ? this.showProgress() : this.props.movie.error ? this.showError() : this.renderMovieDetails() }
             </div>
         )
@@ -76,7 +79,7 @@ class MovieDetail extends PureComponent{
 
                 <div className="details-cover" style={styles}>
                 </div>
-                <div class="details-content">
+                <div className="details-content">
                     <div className="details-synopsis">
                     <h2> Synopsis </h2>
                     <p>{this.props.movie.details.synopsis}</p>
