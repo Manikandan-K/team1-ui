@@ -11,6 +11,10 @@ export const FETCH_MOVIE_PROGRESS = 'FETCH_MOVIE_PROGRESS';
 export const FETCH_MOVIE_SUCCESS = 'FETCH_MOVIE_SUCCESS';
 export const FETCH_MOVIE_FAILURE = 'FETCH_MOVIE_FAILURE';
 
+export const FETCH_SHOWTIMES_SUCCESS = 'FETCH_SHOWTIMES_SUCCESS';
+export const FETCH_SHOWTIMES_PROGRESS = 'FETCH_SHOWTIMES_PROGRESS';
+export const FETCH_SHOWTIMES_FAILURE = 'FETCH_SHOWTIMES_FAILURE'; 
+
 const fetchMoviesInProgress = {
   type: FETCH_MOVIES_PROGRESS
 }
@@ -31,6 +35,19 @@ const fetchMovieInProgress = {
 const movieDetailsFailure = {
   type: FETCH_MOVIE_FAILURE,
 };
+
+const fetchMovieShowTimesInProgress = {
+  type: FETCH_SHOWTIMES_PROGRESS
+};
+
+const fetchMovieShowTimesDataFailure = {
+  type: FETCH_SHOWTIMES_FAILURE
+};
+
+const movieShowTimeDataFetched = (data) => ({
+  type: FETCH_SHOWTIMES_SUCCESS,
+  payload: data
+});
 
 const fetchMovies = (movieType = 'now-showing') => {
   return async (dispatch) => {
@@ -65,6 +82,19 @@ export const fetchMovie = (id = 0) => {
     }
     catch (error) {
       dispatch(movieDetailsFailure);
+    }
+  }
+}
+
+export const fetchMovieShowTimes = (id = 0) => {
+  return async (dispatch) => {
+    dispatch(fetchMovieShowTimesInProgress);
+
+    try {
+      const movieshowTimes = await axios.get(`${baseUrl}/movies/showtimes/${id}`)
+      dispatch(movieShowTimeDataFetched(movieshowTimes))
+    } catch (error) {
+      dispatch(fetchMovieShowTimesDataFailure)
     }
   }
 }
