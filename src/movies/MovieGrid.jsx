@@ -17,11 +17,21 @@ class MovieGrid extends Component {
   }
 
   render() {
+    return (
+      <div>
+      <div className="tabs-wrapper">
+        <button className={this.applyClass(0)} onClick={() => this.onTabClick(0)}>NOW RUNNING</button>
+        <button className={this.applyClass(1)} onClick={() => this.onTabClick(1)}>COMING SOON</button>
+        </div>
+        { this.renderMainContent() }
+      </div>
+    )
+  }
+  renderMainContent() {
     if (this.props.movies.fetching) {
-      return this.showProgress()
+      return this.showProgress();
     }
-
-    return this.props.movies.error || false ? this.showError() : this.showMovies();
+    return this.props.movies.error ? this.showError() : this.showMovies();
   }
 
   applyClass(tabIndex) {
@@ -48,11 +58,6 @@ class MovieGrid extends Component {
   showMovies() {
     return (
       <div >
-        <div className="tabs-wrapper">
-          <button className={this.applyClass(0)} onClick={() => this.onTabClick(0)}>NOW RUNNING</button>
-          <button className={this.applyClass(1)} onClick={() => this.onTabClick(1)}>COMING SOON</button>
-        </div>
-
         <div className="movies-container">
           {this.state.selectedTab === 0 ? this.showRunningMovies() : this.showUpcomingMovies()}
         </div>
@@ -74,13 +79,13 @@ class MovieGrid extends Component {
 
   showProgress() {
     return (
-      <div>Loading...</div>
+      <div className="loading-sign">Loading...</div>
     );
   }
 
   showError() {
     return (
-      <div>Error...</div>
+      <div className="loading-sign">Error... Something Went Wrong</div>
     );
   }
 }

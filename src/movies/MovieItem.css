@@ -13,6 +13,11 @@
     padding: 15px 15px;
     box-sizing: border-box;
 }
+.movie-wrapper a{
+    text-decoration: none;
+    display: block;
+    color: inherit;
+}
 .movie-image {
     height: auto;
     width: 100%;

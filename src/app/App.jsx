@@ -1,39 +1,34 @@
 import React from 'react';
 import { Route, Switch } from 'react-router';
-import { ConnectedRouter } from 'react-router-redux';
-import { Provider } from 'react-redux';
-import configureStore from './store';
-import createHistory from 'history/createBrowserHistory'
 import Header from './components/header/Header'
 import Home from './Home'
 import Footer from './components/footer/Footer'
 import MovieDetail from '../movies/MovieDetail';
-
-const browserHistory = createHistory()
-
-const store = configureStore(browserHistory);
+import './App.css';
 
 const Routes = () => (
-  <ConnectedRouter history={browserHistory}>
-    <Switch>
-      <Route component={MovieDetail} path="/movies/:id/" />
-      <Route component={Home} path="/" />
-    </Switch>
-  </ConnectedRouter>
-);
 
+  <Switch>
+    <Route component={MovieDetail} path="/movies/:id" />
+    <Route component={Home} path="/" />
+  </Switch>
+);
 const Main = () => (
-  <div>
-    <Header />
-    <Routes />
-    <Footer />
+  <div className="maincontent">
+    <div className="header-wrapper">
+      <Header />
+    </div>
+    <div className="router-wrapper">
+      <Routes />
+    </div>
+    <div className="footer">
+      <Footer />
+    </div>
   </div>
 );
 
 const App = () => (
-  <Provider store={store} >
-    <Main />
-  </Provider>
+  <Main />
 );
 
 export default App;
