@@ -60,7 +60,7 @@ export const fetchMovie = (id = 0) => {
       const response = await axios.get(`${baseUrl()}/movies/details/${id}`);
       dispatch({
         type: FETCH_MOVIE_SUCCESS,
-        payload: response.data
+        payload: { ...response.data, slug: slug(changeCase.sentenceCase(response.data.name), { lower: true }) }
       });
     }
     catch (error) {

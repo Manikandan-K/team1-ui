@@ -35,7 +35,7 @@
     width: 100%;
 }
 .details-cover {
-    background-color: red; 
+    background-color: #f1f4f8; 
     width: 100%;
     margin-top: 20px;
     height: 300px;
@@ -86,13 +86,15 @@
 }
 .details-movietitle h1 {
     margin-right: 10px;
+    text-transform: uppercase;
 }
 .details-movierating {
     font-size: 1.5rem;
     color: #515559;
     display: block;
-    width: 1.8em;
+    min-width: 1.8em;
     height: 1.8em;
+    padding: 0.4rem;
     line-height: 1.9em;
     background-color: Green;
     color: white;

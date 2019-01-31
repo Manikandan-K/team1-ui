@@ -27,22 +27,45 @@ class MovieDetail extends PureComponent{
         this.props.fetchMovie(this.props.match.params.id)
     }
 
-    render(){
+    showProgress() {
+        return (
+          <div className="loading-sign">Loading...</div>
+        );
+    }
+    
+    showError() {
+        return (
+            <div className="loading-sign">Error... Something Went Wrong</div>
+        );
+    }
+    render() { 
+        return (
+
+            <div class="movieDetailsPage-wrapper">
+                { this.props.movie.fetching ? this.showProgress() : this.props.movie.error ? this.showError() : this.renderMovieDetails() }
+            </div>
+        )
+        
+    }
+    renderPage() {
+
+    }
+    renderMovieDetails(){
         let styles = {
-            backgroundImage: "url(https://img.spicinemas.in/resources/images/movies/kabali/1000x320.jpg)"
+            backgroundImage: `url(https://img.spicinemas.in/resources/images/movies/${this.props.movie.details.slug}/1000x320.jpg)`
         }
         return (
             <div className="details-wrapper">
                 <div className="details-movieinfo">
                     <div className="details-movietitle">
                         <h1>
-                            KABALI
+                            {this.props.movie.details.name}
                         </h1>
                         <span className="details-movierating">
-                        U
+                            {this.props.movie.details.grade}
                         </span>
                         <span className="details-language">
-                        Tamil
+                        {this.props.movie.details.language}
                         </span>
                     </div>
                     <div className="details-type">
@@ -57,18 +80,18 @@ class MovieDetail extends PureComponent{
                 <div class="details-content">
                     <div className="details-synopsis">
                     <h2> Synopsis </h2>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    <p>{this.props.movie.details.synopsis}</p>
                     <p>
-                        <strong>Genre</strong> : Crime
+                        <strong>Genre</strong> : {this.props.movie.details.genre}
                     </p>
                     <p>
-                        <strong>Crew</strong> : Crime
+                        <strong>Crew</strong> : {this.props.movie.details.crew}
                     </p>
                     <p>
-                        <strong>Cast</strong> : Crime
+                        <strong>Cast</strong> : {this.props.movie.details.cast}
                     </p>
                     <p>
-                        <strong>Runtime</strong> : Crime
+                        <strong>Runtime</strong> : {this.props.movie.details.duration}
                     </p>
                     </div>
                     <div className="details-bookbutton">
