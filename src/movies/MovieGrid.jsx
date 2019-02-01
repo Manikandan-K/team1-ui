@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 import MovieItem from './MovieItem';
 import { connect } from 'react-redux';
 import fetchMovies from './actions';
+import loader from '../app/assets/images/vortex-spiral-spinner.gif';
 import './MovieGrid.css';
-
+import logo from "../app/assets/images/JC_logo1.png";
 class MovieGrid extends Component {
 
   constructor() {
@@ -79,7 +80,9 @@ class MovieGrid extends Component {
 
   showProgress() {
     return (
-      <div className="loading-sign">Loading...</div>
+      <div className="loading-sign">
+          <img alt='jcinemas-loader' height='100' width='100' className="jcinemas-loader" src={loader}/>
+      </div>
     );
   }
 
