@@ -1,0 +1,14 @@
+.showtimes-table td {
+border: 1px solid #eee;
+padding: 15px;
+font-size: 1.4rem;
+}
+.showtimes-table {
+    border-collapse: collapse;
+}
+
+.book-ticket-btn {
+    padding: 10px;
+    border: 1px solid #eee;
+    background-color: #2acad1;
+}

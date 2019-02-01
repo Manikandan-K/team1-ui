@@ -1,6 +1,6 @@
 
-import fetchMovies, { NOW_SHOWING, FETCH_MOVIES_PROGRESS, FETCH_MOVIES_SUCCESS, FETCH_MOVIES_FAILURE } from '../movies/actions';
-import { FETCH_MOVIE_SUCCESS, fetchMovie, FETCH_MOVIE_FAILURE, FETCH_MOVIE_PROGRESS } from '../movies/actions';
+import fetchMovies, { fetchMovieShowTimes, NOW_SHOWING, FETCH_MOVIES_PROGRESS, FETCH_MOVIES_SUCCESS, FETCH_MOVIES_FAILURE } from '../movies/actions';
+import { FETCH_MOVIE_SUCCESS, fetchMovie, FETCH_MOVIE_FAILURE, FETCH_MOVIE_PROGRESS, FETCH_SHOWTIMES_FAILURE, FETCH_SHOWTIMES_PROGRESS, FETCH_SHOWTIMES_SUCCESS } from '../movies/actions';
 import MockAdapter from 'axios-mock-adapter';
 import thunk from 'redux-thunk';
 import configureMockStore from 'redux-mock-store';
@@ -19,6 +19,11 @@ const movieData = {
   name: "Kabali",
   slug: "kabali"
 }
+
+const movieShowtimesData = [{"movieId":1,"name":"Kabali","experiences":"RDX, Dolby Atmos, SUB","movieDate":"2019-02-01","movieTime":"11:30:00"},
+{"movieId":1,"name":"Kabali","experiences":"RDX, Dolby Atmos, SUB","movieDate":"2019-02-02","movieTime":"11:30:00"},
+{"movieId":1,"name":"Kabali","experiences":"RDX, Dolby Atmos, SUB","movieDate":"2019-02-03","movieTime":"11:30:00"},
+{"movieId":1,"name":"Kabali","experiences":"RDX, Dolby Atmos, SUB","movieDate":"2019-02-04","movieTime":"11:30:00"}]
 
 describe("movies/actions", () => {
   beforeEach(() => {
@@ -109,3 +114,40 @@ describe("movieDetails/actions", () => {
     
   });
 })
+
+describe("moviShowTime/actions", () => {
+  beforeEach(() => {
+    store = mockStore({})
+  });
+
+  it('should fetch movie showtime details from server and return FETCH_SHOWTIMES_SUCCESS', async (done) => {
+    mock
+      .onGet('http://localhost:9090/movies/showtimes/1')
+      .reply(200, movieShowtimesData);
+
+    let expectedActions = []
+    
+    store.dispatch(fetchMovieShowTimes(1)).then(() => {
+      expect(store.getActions()[0]).toEqual({ type: FETCH_SHOWTIMES_PROGRESS });
+      expect(store.getActions()[1]).toEqual({
+        type: FETCH_SHOWTIMES_SUCCESS,
+        payload: movieShowtimesData
+      });
+      done();
+    });
+  });
+
+
+  it('should return FETCH_MOVIE_FAILURE if http 500', async (done) => {
+    mock
+      .onGet('http://localhost:9090/movies/showtimes/1')
+      .reply(500, {});
+    let expectedActions = []
+    store.dispatch(fetchMovieShowTimes(1)).then(() => {
+      expect(store.getActions()[0]).toEqual({ type: FETCH_SHOWTIMES_PROGRESS });
+      expect(store.getActions()[1]).toEqual({ type: FETCH_SHOWTIMES_FAILURE });
+      done();
+    });
+    
+  });
+});

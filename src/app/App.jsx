@@ -4,11 +4,13 @@ import Header from './components/header/Header'
 import Home from './Home'
 import Footer from './components/footer/Footer'
 import MovieDetail from '../movies/MovieDetail';
+import MovieShowTime from '../movies/MovieShowTime';
 import './App.css';
 
 const Routes = () => (
 
   <Switch>
+    <Route component={MovieShowTime} path="/movies/showtimes/:id" />
     <Route component={MovieDetail} path="/movies/:id" />
     <Route component={Home} path="/" />
   </Switch>

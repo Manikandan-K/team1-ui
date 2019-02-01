@@ -46,7 +46,7 @@ const fetchMovieShowTimesDataFailure = {
 
 const movieShowTimeDataFetched = (data) => ({
   type: FETCH_SHOWTIMES_SUCCESS,
-  payload: data
+  payload: data.data
 });
 
 const fetchMovies = (movieType = 'now-showing') => {
@@ -91,7 +91,7 @@ export const fetchMovieShowTimes = (id = 0) => {
     dispatch(fetchMovieShowTimesInProgress);
 
     try {
-      const movieshowTimes = await axios.get(`${baseUrl}/movies/showtimes/${id}`)
+      const movieshowTimes = await axios.get(`${baseUrl()}/movies/showtimes/${id}`)
       dispatch(movieShowTimeDataFetched(movieshowTimes))
     } catch (error) {
       dispatch(fetchMovieShowTimesDataFailure)

@@ -2,7 +2,7 @@ import React,{PureComponent} from 'react';
 import './MovieDetail.css';
 import { connect } from 'react-redux';
 import { fetchMovie } from './actions';
-
+import { Link } from 'react-router-dom';
 
 
 class MovieDetail extends PureComponent{
@@ -99,9 +99,9 @@ class MovieDetail extends PureComponent{
                     <div className="details-bookbutton">
 
                         <div>
-                            <button className="btn-book">
+                            <Link className="btn-book" to={`/movies/showtimes/${this.props.movie.details.id}`}>
                             BOOK SEATS
-                            </button>
+                            </Link>
                         </div>
                         <div>
                             <button className="btn-trailer" onClick={this.openTrailerPopup}>
